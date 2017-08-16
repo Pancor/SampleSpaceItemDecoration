@@ -2,9 +2,10 @@ package panekpawel.pl.samplespaceitemdecoration
 
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
+import panekpawel.pl.samplespaceitemdecoration.models.RecyclerAdapterData
 
 
-class RecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class RecyclerAdapter(val data: ArrayList<RecyclerAdapterData>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemCount(): Int {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
