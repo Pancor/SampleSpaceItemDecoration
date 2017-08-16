@@ -40,7 +40,20 @@ class RecyclerAdapter(val data: ArrayList<RecyclerAdapterData>) : RecyclerView.A
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
-
+        when (getItemViewType(position)) {
+            HEADER_VIEW_TYPE -> {
+                val headerHolder = holder as HeaderHolder
+                headerHolder.bindView(position)
+            }
+            AD_VIEW_TYPE -> {
+                val adHolder = holder as AdHolder
+                adHolder.bindView(position)
+            }
+            SIMPLE_TASK_VIEW_TYPE, COMPLEX_TASK_VIEW_TYPE-> {
+                val taskHolder = holder as TaskHolder
+                taskHolder.bindView(position)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
