@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
-import panekpawel.pl.samplespaceitemdecoration.utils.DummyDataCreator
+import panekpawel.pl.samplespaceitemdecoration.utils.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,7 +16,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        val gridLayoutManager = GridLayoutManager(this, 2)
+        val colsCount = resources.getInteger(R.integer.colsCount)
+        val gridLayoutManager = GridLayoutManager(this, colsCount)
         recyclerView.layoutManager = gridLayoutManager
 
         val itemDecoration = SpaceItemDecoration()
@@ -28,5 +29,17 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = RecyclerAdapter(data)
         recyclerView.adapter = adapter
+
+        gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                when(adapter.getItemViewType(position)) {
+                    HEADER_VIEW_TYPE -> return resources.getInteger(R.integer.headerSpanSize)
+                    AD_VIEW_TYPE -> return resources.getInteger(R.integer.adSpanSize)
+                    SIMPLE_TASK_VIEW_TYPE -> return resources.getInteger(R.integer.simpleTaskSpanSize)
+                    COMPLEX_TASK_VIEW_TYPE -> return resources.getInteger(R.integer.complexTaskSpanSize)
+                    else -> return 1
+                }
+            }
+        }
     }
 }
