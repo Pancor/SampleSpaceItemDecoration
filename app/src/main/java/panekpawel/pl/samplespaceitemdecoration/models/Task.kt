@@ -1,6 +1,6 @@
 package panekpawel.pl.samplespaceitemdecoration.models
 
-data class Task(val title: String) {
+data class Task(val title: String, val description: String?) {
 
-    constructor(title: String, description: String): this(title)
+    constructor(title: String): this(title, null)
 }

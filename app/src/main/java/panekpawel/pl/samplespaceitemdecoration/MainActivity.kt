@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import panekpawel.pl.samplespaceitemdecoration.adapter.RecyclerAdapter
 import panekpawel.pl.samplespaceitemdecoration.utils.*
 
 class MainActivity : AppCompatActivity() {
