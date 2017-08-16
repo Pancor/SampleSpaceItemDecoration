@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SampleSpaceItemDecoration</string>
+    <string name="column_count">Number of columns: </string>
 </resources>
