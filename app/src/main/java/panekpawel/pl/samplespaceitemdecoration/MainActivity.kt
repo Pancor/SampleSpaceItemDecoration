@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
         val gridLayoutManager = GridLayoutManager(this, 2)
         recyclerView.layoutManager = gridLayoutManager
 
+        val itemDecoration = SpaceItemDecoration()
+        recyclerView.addItemDecoration(itemDecoration)
 
+        val adapter = RecyclerAdapter()
+        recyclerView.adapter = adapter
     }
 }
