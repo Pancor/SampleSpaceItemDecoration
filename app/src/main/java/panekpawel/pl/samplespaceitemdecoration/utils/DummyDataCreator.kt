@@ -24,6 +24,7 @@ class DummyDataCreator {
         add(Header("Wednesday"), HEADER_VIEW_TYPE)
             add(Task("Wake up"), SIMPLE_TASK_VIEW_TYPE)
             add(Task("Go to sleep"), SIMPLE_TASK_VIEW_TYPE)
+            add(Task("Garden", "-cut grass \n-collect apples"), COMPLEX_TASK_VIEW_TYPE)
 
     }
 

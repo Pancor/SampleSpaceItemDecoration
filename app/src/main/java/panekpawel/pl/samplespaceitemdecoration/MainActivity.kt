@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         val colsCount = resources.getInteger(R.integer.colsCount)
-        val gridLayoutManager = GridLayoutManager(this, colsCount)
+        val gridLayoutManager = GridLayoutManager(this, 4)
         recyclerView.layoutManager = gridLayoutManager
 
         val itemDecoration = SpaceItemDecoration()
@@ -34,10 +34,10 @@ class MainActivity : AppCompatActivity() {
         gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 when(adapter.getItemViewType(position)) {
-                    HEADER_VIEW_TYPE -> return resources.getInteger(R.integer.headerSpanSize)
-                    AD_VIEW_TYPE -> return resources.getInteger(R.integer.adSpanSize)
-                    SIMPLE_TASK_VIEW_TYPE -> return resources.getInteger(R.integer.simpleTaskSpanSize)
-                    COMPLEX_TASK_VIEW_TYPE -> return resources.getInteger(R.integer.complexTaskSpanSize)
+                    HEADER_VIEW_TYPE -> return 4//resources.getInteger(R.integer.headerSpanSize)
+                    AD_VIEW_TYPE -> return 3//resources.getInteger(R.integer.adSpanSize)
+                    SIMPLE_TASK_VIEW_TYPE -> return 1//resources.getInteger(R.integer.simpleTaskSpanSize)
+                    COMPLEX_TASK_VIEW_TYPE -> return 2//resources.getInteger(R.integer.complexTaskSpanSize)
                     else -> return 1
                 }
             }
