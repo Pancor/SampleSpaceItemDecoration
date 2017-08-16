@@ -14,6 +14,7 @@ class DummyDataCreator {
         add(Header("Monday"), HEADER_VIEW_TYPE)
             add(Task("Go out with dog"), SIMPLE_TASK_VIEW_TYPE)
             add(Task("Make dinner"), SIMPLE_TASK_VIEW_TYPE)
+            add(Task("Go to gym"), SIMPLE_TASK_VIEW_TYPE)
             add(Task("Do homework"), SIMPLE_TASK_VIEW_TYPE)
             add(Ad("Developers hates him!",
                     "One little trick to be the best programmer in world",
