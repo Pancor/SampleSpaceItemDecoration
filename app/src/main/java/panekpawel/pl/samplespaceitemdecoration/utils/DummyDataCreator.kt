@@ -25,7 +25,8 @@ class DummyDataCreator {
             add(Task("Wake up"), SIMPLE_TASK_VIEW_TYPE)
             add(Task("Go to sleep"), SIMPLE_TASK_VIEW_TYPE)
             add(Task("Garden", "-cut grass \n-collect apples"), COMPLEX_TASK_VIEW_TYPE)
-
+            add(Task("Do something"), SIMPLE_TASK_VIEW_TYPE)
+            add(Task("Find your purpose"), SIMPLE_TASK_VIEW_TYPE)
     }
 
     private fun add(model: Any, viewType: Int) {
